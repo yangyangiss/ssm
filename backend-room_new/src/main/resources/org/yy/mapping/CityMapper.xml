@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.yy.dao.CityMapper">
+	<resultMap type="org.yy.model.City" id="CityMap">
+			<id property="id" column="id" jdbcType="INTEGER" />
+			<result property="name" column="name" jdbcType="VARCHAR" />
+			<result property="pid" column="pid" jdbcType="INTEGER" />
+			<result property="createTime" column="created_time" jdbcType="DATE" />
+			<result property="updateTime" column="updated_time" jdbcType="DATE" />
+			<result property="deleteTime" column="deleted_time" jdbcType="DATE" />
+			<result property="isDelete"   column="is_deleted" jdbcType="INTEGER" />
+	</resultMap>
+	<select id="findCityListByTop" resultMap="CityMap">
+		select id,name,pid,created_time,updated_time,deleted_time,is_deleted from bmb_city;
+	</select>
+</mapper>
